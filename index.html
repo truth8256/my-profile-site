@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김진실 | 여론조사 전문가</title>
+  <meta name="description" content="여론조사 전문가 김진실 — (주)에스티아이 수석연구원, Bayesian DLM, Survey Sampling, Causal Inference" />
+
+  <!-- Google Fonts: Playfair Display + Noto Serif KR + Noto Sans KR + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              DEFAULT: '#F9F7F2',
+              dark:    '#EDE9E0',
+            },
+            forest: {
+              DEFAULT: '#1A3C34',
+              light:   '#2D5F52',
+              muted:   '#4A7A6D',
+              pale:    '#EAF0EE',
+            },
+            ink: {
+              DEFAULT: '#2C2C2C',
+              body:    '#3D3530',
+              muted:   '#8C7E74',
+              border:  '#D4CFC6',
+            },
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Noto Serif KR', 'Georgia', 'serif'],
+            sans:  ['Noto Sans KR', 'Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-cream font-sans text-ink">
+
+  <!-- Paper grain overlay -->
+  <div class="paper-grain fixed inset-0 pointer-events-none z-[9999]"></div>
+
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 w-full z-50">
+    <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+
+      <a href="#hero" class="font-serif text-forest text-lg font-semibold tracking-[0.12em]">
+        김진실
+      </a>
+
+      <ul class="hidden md:flex items-center gap-10 text-[0.7rem] tracking-[0.22em] uppercase text-ink-muted">
+        <li><a href="#about"    class="hover:text-forest transition-colors duration-200">소개</a></li>
+        <li><a href="#skills"   class="hover:text-forest transition-colors duration-200">기술</a></li>
+        <li><a href="#projects" class="hover:text-forest transition-colors duration-200">프로젝트</a></li>
+        <li><a href="#contact"  class="hover:text-forest transition-colors duration-200">연락처</a></li>
+      </ul>
+
+      <button id="menu-btn" class="md:hidden text-forest" aria-label="메뉴">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink-border">
+      <ul class="px-8 py-5 flex flex-col gap-5 text-[0.7rem] tracking-[0.22em] uppercase text-ink-muted">
+        <li><a href="#about"    class="hover:text-forest transition-colors">소개</a></li>
+        <li><a href="#skills"   class="hover:text-forest transition-colors">기술</a></li>
+        <li><a href="#projects" class="hover:text-forest transition-colors">프로젝트</a></li>
+        <li><a href="#contact"  class="hover:text-forest transition-colors">연락처</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO — Magazine Cover
+  ════════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="unnamed.jpg"
+        alt=""
+        class="w-full object-cover object-center"
+      />
+      <!-- Cream gradient overlay: strong left → fades right -->
+      <div class="absolute inset-0 bg-gradient-to-r from-cream from-45% via-cream/88 to-cream/25"></div>
+      <!-- Top & bottom fades -->
+      <div class="absolute inset-0 bg-gradient-to-b from-cream/55 via-transparent to-cream/50"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-8 w-full py-36">
+      <div class="max-w-2xl">
+
+        <!-- Volume tag -->
+        <div class="fade-in flex items-center gap-4 mb-10" style="animation-delay:0s">
+          <span class="text-[0.68rem] font-medium text-forest/70 tracking-[0.28em] uppercase border border-forest/25 px-3 py-1.5">
+            Vol. 2025
+          </span>
+          <div class="h-px w-14 bg-forest/22"></div>
+          <span class="text-[0.68rem] text-ink-muted tracking-widest">여론조사 · 통계 · AI</span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="font-serif leading-[1.08] mb-9 fade-in" style="animation-delay:0.18s">
+          <span class="block text-6xl md:text-7xl lg:text-[5.5rem] text-forest font-semibold">데이터 너머의</span>
+          <span class="block text-6xl md:text-7xl lg:text-[5.5rem] text-forest-light font-normal">세상을 읽다</span>
+        </h1>
+
+        <!-- Byline rule -->
+        <div class="fade-in flex items-center gap-5 mb-8" style="animation-delay:0.34s">
+          <div class="h-px flex-1 max-w-xs bg-forest/20"></div>
+          <span class="text-[0.65rem] text-ink-muted tracking-[0.28em] uppercase">Researcher · Statistician</span>
+        </div>
+
+        <!-- Name & title -->
+        <div class="fade-in flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-11" style="animation-delay:0.48s">
+          <div>
+            <p class="font-serif text-3xl md:text-4xl text-forest font-semibold mb-1.5">김진실</p>
+            <p class="text-ink-muted text-[0.83rem] tracking-wide">(주)에스티아이 수석연구원 · 여론조사 전문가</p>
+          </div>
+          <p class="text-ink-muted text-xs leading-relaxed text-left sm:text-right">
+            고려대학교 통계학과 박사수료<br>
+            Bayesian DLM · Survey Sampling
+          </p>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="fade-in flex flex-wrap gap-4" style="animation-delay:0.62s">
+          <a href="https://github.com/truth8256" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2.5 px-6 py-3 bg-forest text-cream text-[0.78rem] tracking-[0.12em] uppercase font-medium transition-all duration-200 hover:bg-forest-light hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest/20">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="mailto:truth8256@gmail.com"
+             class="inline-flex items-center gap-2.5 px-6 py-3 border border-forest/45 text-forest text-[0.78rem] tracking-[0.12em] uppercase font-medium transition-all duration-200 hover:bg-forest/8 hover:-translate-y-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            이메일 보내기
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span class="text-[0.6rem] text-ink-muted tracking-[0.3em] uppercase">Scroll</span>
+      <div class="line-drip"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       ABOUT — Profile Article
+  ════════════════════════════════════════ -->
+  <section id="about" class="py-28 bg-cream">
+    <div class="max-w-6xl mx-auto px-8">
+
+      <!-- Section label -->
+      <div class="scroll-animate flex items-center gap-5 mb-20">
+        <span class="text-[0.65rem] tracking-[0.32em] uppercase text-ink-muted">Profile</span>
+        <div class="h-px flex-1 bg-ink-border"></div>
+        <span class="font-serif text-[0.8rem] text-ink-border italic">01</span>
+      </div>
+
+      <!-- 2-column: 2:3 ratio -->
+      <div class="grid md:grid-cols-5 gap-12 lg:gap-20 items-start">
+
+        <!-- Left: Profile visual + facts -->
+        <div class="md:col-span-2 scroll-animate">
+          <!-- Profile image -->
+          <div class="relative max-w-xs mx-auto md:mx-0 editorial-shadow mb-7 overflow-hidden border border-ink-border">
+            <img src="250924.png" alt="김진실" class="w-full h-full object-cover object-top" />
+          </div>
+
+          <!-- Key facts table -->
+          <dl class="divide-y divide-ink-border text-[0.82rem]">
+            <div class="py-3.5 flex justify-between items-baseline">
+              <dt class="text-[0.63rem] uppercase tracking-[0.25em] text-ink-muted">이름</dt>
+              <dd class="text-forest font-medium">김진실</dd>
+            </div>
+            <div class="py-3.5 flex justify-between items-baseline">
+              <dt class="text-[0.63rem] uppercase tracking-[0.25em] text-ink-muted">소속/직책</dt>
+              <dd class="text-forest font-medium">(주)에스티아이 수석연구원</dd>
+            </div>
+            <div class="py-3.5 flex justify-between items-baseline">
+              <dt class="text-[0.63rem] uppercase tracking-[0.25em] text-ink-muted">학력</dt>
+              <dd class="text-forest font-medium">고려대 통계학 박사수료</dd>
+            </div>
+            <div class="py-3.5 flex justify-between items-baseline">
+              <dt class="text-[0.63rem] uppercase tracking-[0.25em] text-ink-muted">분야</dt>
+              <dd class="text-forest font-medium">여론조사 · 통계</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Right: Bio -->
+        <div class="md:col-span-3 scroll-animate">
+          <h2 class="font-serif text-4xl md:text-5xl text-forest font-semibold leading-tight mb-8">
+            조사의 현장에서,<br>
+            <span class="font-normal text-forest-muted">데이터를 말하다</span>
+          </h2>
+
+          <div class="space-y-5 text-ink-body text-[0.95rem] leading-[1.95]">
+            <p>
+              현직 조사전문가이며,
+              <strong class="text-forest font-semibold">조사데이터의 통계 분석과 조사방법론 연구</strong>를
+              이어가고 있습니다. 고려대학교 통계학과 박사수료 과정에서 여론조사의
+              방법론적 토대를 깊이 연구했습니다.
+            </p>
+            <p>
+              2025년에는 한겨레와 협력하여
+              <strong class="text-forest font-semibold">『예측 6.3대선』</strong>
+              지지율 예측 모델을 개발했습니다.
+              베이지안 동적 선형 모델(Bayesian DLM)을 핵심 방법론으로 적용하여
+              불확실성을 정량화하고 시계열 기반의 예측 정확도를 높였습니다.
+            </p>
+            <p>
+              최근에는
+              <strong class="text-forest font-semibold">AI 기술을 활용한 조사 설계와 자동화된 데이터 분석</strong>
+              방법에 관심을 갖고 연구를 확장하고 있습니다.
+            </p>
+          </div>
+
+          <!-- Pull quote -->
+          <blockquote class="my-9 border-l-[3px] border-forest pl-6">
+            <p class="font-serif text-xl md:text-2xl text-forest italic leading-relaxed">
+              "더 많이 연구하고 더 멀리 도전하고 싶습니다."
+            </p>
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SKILLS — Deep Forest (Inverted Section)
+  ════════════════════════════════════════ -->
+  <section id="skills" class="py-28 bg-forest text-cream">
+    <div class="max-w-6xl mx-auto px-8">
+
+      <!-- Section label -->
+      <div class="scroll-animate flex items-center gap-5 mb-20">
+        <span class="text-[0.65rem] tracking-[0.32em] uppercase text-cream/45">Methodology</span>
+        <div class="h-px flex-1 bg-cream/15"></div>
+        <span class="font-serif text-[0.8rem] text-cream/25 italic">02</span>
+      </div>
+
+      <!-- Three skill cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+        <!-- 01 Survey Sampling -->
+        <div class="scroll-animate group">
+          <div class="border border-cream/15 p-8 h-full relative overflow-hidden hover:border-cream/32 transition-colors duration-300">
+            <span class="font-serif text-[5rem] font-light text-cream/7 absolute top-3 right-5 leading-none select-none group-hover:text-cream/12 transition-colors">01</span>
+            <div class="mb-7">
+              <h3 class="font-serif text-2xl text-cream font-semibold leading-snug">Survey<br>Sampling</h3>
+              <div class="h-px w-8 bg-cream/30 mt-4"></div>
+            </div>
+            <p class="text-cream/60 text-sm leading-[1.85]">
+              과학적 표본 설계와 추출 방법론을 통해 신뢰할 수 있는 여론조사 데이터를 수집합니다.
+              층화추출, 집락추출 등 다양한 기법을 활용하여 편향 없는 조사를 설계합니다.
+            </p>
+            <div class="mt-9 pt-6 border-t border-cream/10">
+              <div class="h-px bg-cream/12 overflow-hidden">
+                <div class="skill-bar h-full bg-cream/55" data-width="92"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Bayesian DLM -->
+        <div class="scroll-animate group">
+          <div class="border border-cream/15 p-8 h-full relative overflow-hidden hover:border-cream/32 transition-colors duration-300">
+            <span class="font-serif text-[5rem] font-light text-cream/7 absolute top-3 right-5 leading-none select-none group-hover:text-cream/12 transition-colors">02</span>
+            <div class="mb-7">
+              <h3 class="font-serif text-2xl text-cream font-semibold leading-snug">Bayesian<br>DLM</h3>
+              <div class="h-px w-8 bg-cream/30 mt-4"></div>
+            </div>
+            <p class="text-cream/60 text-sm leading-[1.85]">
+              베이지안 동적 선형 모델로 시계열 지지율을 예측합니다.
+              2025년 6.3 대선 예측 모델에 핵심 적용된 방법론으로,
+              불확실성 정량화와 실시간 업데이트가 가능합니다.
+            </p>
+            <div class="mt-9 pt-6 border-t border-cream/10">
+              <div class="h-px bg-cream/12 overflow-hidden">
+                <div class="skill-bar h-full bg-cream/55" data-width="88"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Causal Inference -->
+        <div class="scroll-animate group">
+          <div class="border border-cream/15 p-8 h-full relative overflow-hidden hover:border-cream/32 transition-colors duration-300">
+            <span class="font-serif text-[5rem] font-light text-cream/7 absolute top-3 right-5 leading-none select-none group-hover:text-cream/12 transition-colors">03</span>
+            <div class="mb-7">
+              <h3 class="font-serif text-2xl text-cream font-semibold leading-snug">Causal<br>Inference</h3>
+              <div class="h-px w-8 bg-cream/30 mt-4"></div>
+            </div>
+            <p class="text-cream/60 text-sm leading-[1.85]">
+              관측 데이터에서 인과관계를 규명하는 통계적 방법론.
+              잠재적 결과 프레임워크, 도구변수(IV), 이중차분법(DID) 등을
+              연구하며 정책 평가와 인과 분석에 적용합니다.
+            </p>
+            <div class="mt-9 pt-6 border-t border-cream/10">
+              <div class="h-px bg-cream/12 overflow-hidden">
+                <div class="skill-bar h-full bg-cream/55" data-width="82"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tools row -->
+      <div class="scroll-animate flex flex-col sm:flex-row sm:items-center gap-4 border-t border-cream/12 pt-8">
+        <span class="text-[0.63rem] tracking-[0.28em] uppercase text-cream/35 flex-shrink-0">Tools</span>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-1.5 border border-cream/18 text-cream/55 text-xs tracking-wide hover:border-cream/38 hover:text-cream/75 transition-colors cursor-default">R</span>
+          <span class="px-4 py-1.5 border border-cream/18 text-cream/55 text-xs tracking-wide hover:border-cream/38 hover:text-cream/75 transition-colors cursor-default">Python</span>
+          <span class="px-4 py-1.5 border border-cream/18 text-cream/55 text-xs tracking-wide hover:border-cream/38 hover:text-cream/75 transition-colors cursor-default">Stan / JAGS</span>
+          <span class="px-4 py-1.5 border border-cream/18 text-cream/55 text-xs tracking-wide hover:border-cream/38 hover:text-cream/75 transition-colors cursor-default">SPSS</span>
+          <span class="px-4 py-1.5 border border-cream/18 text-cream/55 text-xs tracking-wide hover:border-cream/38 hover:text-cream/75 transition-colors cursor-default">Git</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       PROJECTS — Editorial Stories
+  ════════════════════════════════════════ -->
+  <section id="projects" class="py-28 bg-cream">
+    <div class="max-w-6xl mx-auto px-8">
+
+      <!-- Section label -->
+      <div class="scroll-animate flex items-center gap-5 mb-20">
+        <span class="text-[0.65rem] tracking-[0.32em] uppercase text-ink-muted">Portfolio</span>
+        <div class="h-px flex-1 bg-ink-border"></div>
+        <span class="font-serif text-[0.8rem] text-ink-border italic">03</span>
+      </div>
+
+      <!-- Cover Story: Featured project -->
+      <div class="scroll-animate editorial-shadow mb-8 bg-white border border-ink-border overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+          <!-- Forest accent stripe -->
+          <div class="h-1.5 md:h-auto md:w-1.5 bg-forest flex-shrink-0"></div>
+          <div class="p-8 md:p-10 flex-1">
+            <!-- Article meta -->
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+              <span class="text-[0.63rem] tracking-[0.22em] uppercase bg-forest text-cream px-3 py-1.5 font-medium">Cover Story</span>
+              <div class="h-3 w-px bg-ink-border hidden sm:block"></div>
+              <span class="text-[0.72rem] text-ink-muted">2025</span>
+              <span class="text-[0.72rem] text-ink-muted">·</span>
+              <span class="text-[0.72rem] text-ink-muted italic font-serif">한겨레 × (주)에스티아이</span>
+            </div>
+
+            <h3 class="font-serif text-3xl md:text-[2.2rem] text-forest font-semibold leading-tight mb-5">
+              『예측 6.3대선』<br>지지율 예측 모델
+            </h3>
+
+            <p class="text-ink-body text-[0.92rem] leading-[1.95] mb-8 max-w-2xl">
+              한겨레와 협력하여 제21대 대통령 선거(2025년 6월 3일) 지지율 예측 모델을 개발했습니다.
+              베이지안 동적 선형 모델(Bayesian DLM)을 핵심 방법론으로 적용하여 다수 여론조사의
+              불확실성을 정량화하고, 시계열 기반 지지율 흐름을 추정했습니다.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-6 border-t border-ink-border">
+              <span class="px-3 py-1.5 border border-forest/25 text-forest text-xs tracking-wide">Bayesian DLM</span>
+              <span class="px-3 py-1.5 border border-forest/25 text-forest text-xs tracking-wide">Time Series</span>
+              <span class="px-3 py-1.5 border border-forest/25 text-forest text-xs tracking-wide">여론조사</span>
+              <span class="px-3 py-1.5 border border-forest/25 text-forest text-xs tracking-wide">선거 예측</span>
+              <span class="px-3 py-1.5 border border-forest/25 text-forest text-xs tracking-wide">R / Stan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two smaller cards -->
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- AI Research -->
+        <div class="scroll-animate bg-white border border-ink-border p-7 editorial-shadow hover:border-forest/30 transition-colors duration-200 group">
+          <div class="flex justify-between items-start mb-5">
+            <span class="text-[0.63rem] tracking-[0.22em] uppercase text-ink-muted">Ongoing Research</span>
+            <span class="text-[0.65rem] px-2.5 py-1 bg-amber-50 border border-amber-200 text-amber-700 tracking-wide">진행 중</span>
+          </div>
+          <h3 class="font-serif text-2xl text-forest font-semibold leading-snug mb-1">AI 기반 조사 설계 연구</h3>
+          <p class="text-ink-muted text-[0.75rem] italic font-serif mb-5">2025 – 현재</p>
+          <p class="text-ink-body text-[0.88rem] leading-[1.88] mb-7">
+            LLM을 활용한 설문 문항 자동 생성 및 검증, AI 기반 데이터 클리닝 자동화,
+            머신러닝을 활용한 응답 패턴 분석 등 차세대 조사 방법론을 연구합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-5 border-t border-ink-border">
+            <span class="px-3 py-1.5 border border-ink-border text-ink-muted text-xs tracking-wide">AI / LLM</span>
+            <span class="px-3 py-1.5 border border-ink-border text-ink-muted text-xs tracking-wide">자동화</span>
+            <span class="px-3 py-1.5 border border-ink-border text-ink-muted text-xs tracking-wide">NLP</span>
+          </div>
+        </div>
+
+        <!-- Survey Methodology -->
+        <div class="scroll-animate bg-white border border-ink-border p-7 editorial-shadow hover:border-forest/30 transition-colors duration-200 group">
+          <div class="flex justify-between items-start mb-5">
+            <span class="text-[0.63rem] tracking-[0.22em] uppercase text-ink-muted">Academic Research</span>
+          </div>
+          <h3 class="font-serif text-2xl text-forest font-semibold leading-snug mb-1">조사방법론 연구</h3>
+          <p class="text-ink-muted text-[0.75rem] italic font-serif mb-5">고려대학교 통계학과 · 지속 연구</p>
+          <p class="text-ink-body text-[0.88rem] leading-[1.88] mb-7">
+            표본 편향 보정, 가중치 조정 방법론, 비표본오차 분석 등 여론조사의
+            방법론적 한계를 극복하기 위한 통계적 연구를 진행합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-5 border-t border-ink-border">
+            <span class="px-3 py-1.5 border border-ink-border text-ink-muted text-xs tracking-wide">Survey Methodology</span>
+            <span class="px-3 py-1.5 border border-ink-border text-ink-muted text-xs tracking-wide">Weighting</span>
+            <span class="px-3 py-1.5 border border-ink-border text-ink-muted text-xs tracking-wide">Bias Correction</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════ -->
+  <section id="contact" class="py-28 bg-cream-dark">
+    <div class="max-w-6xl mx-auto px-8">
+
+      <!-- Section label -->
+      <div class="scroll-animate flex items-center gap-5 mb-20">
+        <span class="text-[0.65rem] tracking-[0.32em] uppercase text-ink-muted">Contact</span>
+        <div class="h-px flex-1 bg-ink-border"></div>
+        <span class="font-serif text-[0.8rem] text-ink-border italic">04</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Heading & text -->
+        <div class="scroll-animate">
+          <h2 class="font-serif text-4xl md:text-5xl text-forest font-semibold leading-tight mb-7">
+            함께 연구하고<br>
+            <span class="font-normal text-forest-muted">더 멀리 도전합시다</span>
+          </h2>
+          <p class="text-ink-muted text-[0.92rem] leading-[1.95]">
+            연구 협업, 강의 요청, 또는 어떤 문의라도 언제든지 연락 주세요.
+            데이터로 더 나은 세상을 만드는 일에 기꺼이 함께하겠습니다.
+          </p>
+        </div>
+
+        <!-- Contact cards -->
+        <div class="scroll-animate space-y-4">
+
+          <a href="mailto:truth8256@gmail.com"
+             class="flex items-center gap-5 p-6 bg-white border border-ink-border editorial-shadow hover:border-forest/35 transition-all duration-200 hover:-translate-y-0.5 group">
+            <div class="w-11 h-11 bg-forest-pale flex items-center justify-center flex-shrink-0 group-hover:bg-forest/12 transition-colors">
+              <svg class="w-5 h-5 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-[0.62rem] uppercase tracking-[0.25em] text-ink-muted mb-1.5">이메일</p>
+              <p class="text-forest font-medium text-[0.85rem] tracking-wide">truth8256@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/truth8256" target="_blank" rel="noopener"
+             class="flex items-center gap-5 p-6 bg-white border border-ink-border editorial-shadow hover:border-forest/35 transition-all duration-200 hover:-translate-y-0.5 group">
+            <div class="w-11 h-11 bg-forest-pale flex items-center justify-center flex-shrink-0 group-hover:bg-forest/12 transition-colors">
+              <svg class="w-5 h-5 text-forest" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-[0.62rem] uppercase tracking-[0.25em] text-ink-muted mb-1.5">GitHub</p>
+              <p class="text-forest font-medium text-[0.85rem] tracking-wide">github.com/truth8256</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="py-8 bg-forest border-t border-forest-light/25">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="flex items-center gap-4">
+        <span class="font-serif text-cream/70 font-semibold tracking-[0.1em]">김진실</span>
+        <span class="text-cream/20 text-xs">—</span>
+        <p class="text-cream/35 text-xs">© <span id="footer-year"></span> 김진실. All rights reserved.</p>
+      </div>
+      <p class="text-cream/25 text-xs tracking-wide">여론조사 전문가 · (주)에스티아이 수석연구원</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

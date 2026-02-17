@@ -1,0 +1,107 @@
+/* ========================================
+   style.css — Editorial Insight & Story
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Paper grain overlay ── */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  opacity: 0.032;
+  mix-blend-mode: multiply;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F9F7F2; }
+::-webkit-scrollbar-thumb { background: #C8C2B8; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #1A3C34; }
+
+/* ── Navbar ── */
+#navbar {
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#navbar.scrolled {
+  background: rgba(249, 247, 242, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #D4CFC6;
+  box-shadow: 0 1px 12px rgba(26, 60, 52, 0.06);
+}
+
+/* ── Hero fade-in on load ── */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease-out forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll-triggered animations ── */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-animate:nth-child(2) { transition-delay: 0.10s; }
+.scroll-animate:nth-child(3) { transition-delay: 0.20s; }
+.scroll-animate:nth-child(4) { transition-delay: 0.30s; }
+
+/* ── Scroll indicator (vertical pulse) ── */
+@keyframes scroll-drip {
+  0%   { transform: translateX(-50%) scaleY(0);   transform-origin: top;    opacity: 0; }
+  30%  { transform: translateX(-50%) scaleY(1);   transform-origin: top;    opacity: 1; }
+  70%  { transform: translateX(-50%) scaleY(1);   transform-origin: bottom; opacity: 1; }
+  100% { transform: translateX(-50%) scaleY(0);   transform-origin: bottom; opacity: 0; }
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.scroll-indicator .line-drip {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(26,60,52,0.5), transparent);
+  animation: scroll-drip 2.4s ease-in-out infinite;
+}
+
+/* ── Editorial box shadow ── */
+.editorial-shadow {
+  box-shadow: 0 2px 18px rgba(26, 60, 52, 0.07), 0 1px 3px rgba(26, 60, 52, 0.04);
+}
+
+/* ── Skill bar ── */
+.skill-bar {
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Active nav link ── */
+nav a.nav-active {
+  color: #1A3C34 !important;
+}
+
+/* ── Profile grid decorative lines ── */
+.profile-grid-line {
+  position: absolute;
+  background: rgba(26, 60, 52, 0.08);
+}
