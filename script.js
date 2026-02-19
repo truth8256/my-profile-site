@@ -69,3 +69,23 @@ sections.forEach(s => navObserver.observe(s));
 // ── Footer 연도 자동 업데이트 ─────────────────────
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ── Media: Archive Expand ────────────────────────
+window.toggleArchive = function() {
+  const hiddenItems = document.querySelectorAll('.archive-hidden');
+  const btn = document.getElementById('archive-toggle-btn');
+  
+  hiddenItems.forEach(item => {
+    item.classList.remove('hidden');
+    // Fade-in animation
+    requestAnimationFrame(() => {
+        item.style.opacity = '0';
+        requestAnimationFrame(() => {
+            item.style.transition = 'opacity 0.8s ease';
+            item.style.opacity = '1';
+        });
+    });
+  });
+  
+  if (btn) btn.style.display = 'none';
+};
