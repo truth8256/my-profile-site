@@ -1,111 +1,114 @@
 {
-  "main": {
-    "id": "idIfCcU6yO0",
-    "title": "이재명 대통령을 지지하는 사람들의 심리 #여론조사",
-    "date": "2026-01-29T00:00:52-08:00"
-  },
-  "list": [
+  "mainId": "idIfCcU6yO0",
+  "videos": [
     {
       "id": "DoIKnig557s",
       "title": "국민의힘은 왜 부정선거론과 손절하지 못할까? #여론조사",
-      "date": "2026-02-06T00:00:12-08:00",
-      "original_url": "https://youtu.be/DoIKnig557s?si=FX3yqsKPPdxQt9k0"
+      "date": "2026-02-06",
+      "url": "https://youtu.be/DoIKnig557s?si=FX3yqsKPPdxQt9k0"
+    },
+    {
+      "id": "idIfCcU6yO0",
+      "title": "이재명 대통령을 지지하는 사람들의 심리 #여론조사",
+      "date": "2026-01-29",
+      "url": "https://www.youtube.com/watch?v=idIfCcU6yO0",
+      "description": "1월 2주 갤럽 조사 기준 긍정 평가 60%, 부정 평가 33% 기록. 리얼미터 조사에서도 56.8%로 상승세를 보였습니다.\n\n외교·안보 분야의 성과와 경제 지표 호조가 지지율 상승의 주요 동력으로 분석됩니다. 이재명 대통령의 지지율은 취임 후 60%대 초반을 안정적으로 유지하고 있습니다.\n\n이번 방송에서는 국정 지지율의 기반과 향후 과제를 심층 분석합니다."
+    },
+    {
+      "id": "NloooghCUEU",
+      "title": "[시사콜콜] 여론조사 - 대통령 지지율 회복이 가장 빠른 계층 / 심층조사 - 자립준비청년의 현실 추적",
+      "date": "2025-12-24",
+      "url": "https://youtu.be/NloooghCUEU?si=hKdjUb1zTjZUyLwJ"
     },
     {
       "id": "dYk4Y-O0uR4",
       "title": "이재명 정부 부동산 정책에 대한 국민 심리는 왜 이중적일까",
-      "date": "2025-11-20T00:34:10-08:00",
-      "original_url": "https://youtu.be/dYk4Y-O0uR4?si=RdFrtFTFkWXqR2-9"
-    },
-    {
-      "id": "NloooghCUEU",
-      "title": "[시사콜콜] 여론조사 - 대통령 지지율 회복이 가장 빠른 계층 / 심층조사 - 자립준비청년의 현실 추적 : 지원금도 제대로 못받는 청년들",
-      "date": "2025-12-24T19:00:30-08:00",
-      "original_url": "https://youtu.be/NloooghCUEU?si=hKdjUb1zTjZUyLwJ"
+      "date": "2025-11-20",
+      "url": "https://youtu.be/dYk4Y-O0uR4?si=RdFrtFTFkWXqR2-9"
     },
     {
       "id": "eoGcpWjvV3E",
       "title": "[시사콜콜] 이재명 대통령 취임 100일 국정수행평가, '긍정' 유지 비결 | 2025.09.24",
-      "date": "2025-09-24T03:01:17-07:00",
-      "original_url": "https://youtu.be/eoGcpWjvV3E?si=xnxZ8HLxmA_-GjzY"
+      "date": "2025-09-24",
+      "url": "https://youtu.be/eoGcpWjvV3E?si=xnxZ8HLxmA_-GjzY"
     },
     {
       "id": "N9MRKgYLr4I",
       "title": "[시사콜콜] 한미, 한중관계에 대한 국민인식 여론조사 살펴보기 | 25.09.10",
-      "date": "2025-09-10T03:00:43-07:00",
-      "original_url": "https://youtu.be/N9MRKgYLr4I?si=b_Ccgs5nrHwCgdr5"
-    },
-    {
-      "id": "fGsHPHgTToo",
-      "title": "[시사콜콜] 여론조사 깊게 들여다보기 - 민생회복소비쿠폰 2년간 변화 (feat. 김진실 수석연구위원) | 2025.7.16",
-      "date": "2025-07-16T03:01:11-07:00",
-      "original_url": "https://youtu.be/fGsHPHgTToo?si=FFoK2LjIbDkb6R6M"
+      "date": "2025-09-10",
+      "url": "https://youtu.be/N9MRKgYLr4I?si=b_Ccgs5nrHwCgdr5"
     },
     {
       "id": "Q5Qucyn2UEA",
       "title": "[시사콜콜] 윤어게인 국힘 대표 지지율 추락시킬까 / 일본에 대한 국민인식 변곡점 지났다? | 2025.8.27",
-      "date": "2025-08-27T03:00:40-07:00",
-      "original_url": "https://youtu.be/Q5Qucyn2UEA?si=-D47jGXNbDwZtgzo"
+      "date": "2025-08-27",
+      "url": "https://youtu.be/Q5Qucyn2UEA?si=-D47jGXNbDwZtgzo"
     },
     {
       "id": "bMf-GkPxREI",
       "title": "[시사콜콜] 김건희 시계로 검찰개혁까지, 조국 사면 여론 전문가와 함께 보기 | 25.08.13",
-      "date": "2025-08-13T03:00:55-07:00",
-      "original_url": "https://youtu.be/bMf-GkPxREI?si=-rh8rDtOv00vQ3Hn"
+      "date": "2025-08-13",
+      "url": "https://youtu.be/bMf-GkPxREI?si=-rh8rDtOv00vQ3Hn"
     },
     {
       "id": "OkuPlN0INdg",
       "title": "[시사콜콜] 여론조사 부동층을 제대로 보는 법 | 2025.7.30",
-      "date": "2025-07-30T03:00:06-07:00",
-      "original_url": "https://youtu.be/OkuPlN0INdg?si=4-O6U5YMPIu9-QlM"
+      "date": "2025-07-30",
+      "url": "https://youtu.be/OkuPlN0INdg?si=4-O6U5YMPIu9-QlM"
+    },
+    {
+      "id": "fGsHPHgTToo",
+      "title": "[시사콜콜] 여론조사 깊게 들여다보기 - 민생회복소비쿠폰 2년간 변화 (feat. 김진실 수석연구위원) | 2025.7.16",
+      "date": "2025-07-16",
+      "url": "https://youtu.be/fGsHPHgTToo?si=FFoK2LjIbDkb6R6M"
     },
     {
       "id": "uKLBeFuRKcQ",
       "title": "검찰 고위급 인사 해설/ 여론조사 분석 - 극우를 어떻게 볼 것인가 | 시사콜콜 2025.07.02",
-      "date": "2025-07-02T03:00:06-07:00",
-      "original_url": "https://youtu.be/uKLBeFuRKcQ?si=kwibxFUGnS2WxCGs&t=3050"
+      "date": "2025-07-02",
+      "url": "https://youtu.be/uKLBeFuRKcQ?si=kwibxFUGnS2WxCGs&t=3050"
     },
     {
       "id": "AURinFY5zqI",
       "title": "김용현 석방 검사과 판사 황당 콜라보의 결과 / 이재명과 이준석 지지자들의 결정적 차이(feat. 김진실) | 2025.6.17",
-      "date": "2025-06-17T03:00:06-07:00",
-      "original_url": "https://youtu.be/AURinFY5zqI?si=IMQgu-1McMdylX2y&t=2072"
+      "date": "2025-06-17",
+      "url": "https://youtu.be/AURinFY5zqI?si=IMQgu-1McMdylX2y&t=2072"
     },
     {
       "id": "giNG7ea6D5s",
       "title": "리박스쿨, 윤석열 시대 학교에 탈법적으로 침투한 극우/ 대선 결과 예측 여론조사 비하인드 스토리 | 시사콜콜 2025.6.2",
-      "date": "2025-06-02T03:00:06-07:00",
-      "original_url": "https://youtu.be/giNG7ea6D5s?si=TK8WKVQB-qScc9D0&t=3977"
+      "date": "2025-06-02",
+      "url": "https://youtu.be/giNG7ea6D5s?si=TK8WKVQB-qScc9D0&t=3977"
     },
     {
       "id": "NkqdLe2Q3YU",
       "title": "단일화 할까 말까? 그만 하자 단일화 이슈몰이/ 홈플러스에 관심을/ 6.3대선 결과 예측 | 시사콜콜 2025.5.27",
-      "date": "2025-05-27T03:00:40-07:00",
-      "original_url": "https://youtu.be/NkqdLe2Q3YU?si=7yS4J3g3P3JJO5YK&t=2954"
+      "date": "2025-05-27",
+      "url": "https://youtu.be/NkqdLe2Q3YU?si=7yS4J3g3P3JJO5YK&t=2954"
     },
     {
       "id": "DCAFx_rcC1o",
-      "title": "SPC 사장 구속 시켜야/ 김문수 빅텐트? 내란텐트!/ 김문수 지지층의 위험한 인식  | 시사콜콜 2025.05.20",
-      "date": "2025-05-20T03:00:06-07:00",
-      "original_url": "https://youtu.be/DCAFx_rcC1o?si=spbugx85GaR-p3xM&t=4070"
+      "title": "SPC 사장 구속 시켜야/ 김문수 빅텐트? 내란텐트!/ 김문수 지지층의 위험한 인식 | 시사콜콜 2025.05.20",
+      "date": "2025-05-20",
+      "url": "https://youtu.be/DCAFx_rcC1o?si=spbugx85GaR-p3xM&t=4070"
     },
     {
       "id": "MJFCKvdaWT4",
       "title": "유세첫날 권성동 꺼져 터져나온 대구경북 / 여론조사로 본 대선 - TK가 심상치 않다 | 시사콜콜 2025.05.13",
-      "date": "2025-05-13T03:00:07-07:00",
-      "original_url": "https://youtu.be/MJFCKvdaWT4?si=P4FbesrRRg1iLAZo&t=2663"
+      "date": "2025-05-13",
+      "url": "https://youtu.be/MJFCKvdaWT4?si=P4FbesrRRg1iLAZo&t=2663"
     },
     {
       "id": "CvJRDrdlMcw",
       "title": "조희대의 난 진압에 떨고 있는 자들 / 김문수 버티기와 눈물나는 한덕수, 망해가는 국힘 / 이재명 압도적 지지여론이 사법쿠데타 막았다 | 시사콜콜 2025.5.7",
-      "date": "2025-05-07T03:00:06-07:00",
-      "original_url": "https://youtu.be/CvJRDrdlMcw?si=yhEM7EFPMZCeJajn&t=4378"
+      "date": "2025-05-07",
+      "url": "https://youtu.be/CvJRDrdlMcw?si=yhEM7EFPMZCeJajn&t=4378"
     },
     {
       "id": "hMzkFQKRpP0",
       "title": "[시사콜콜] 내란 잔당들의 알박기 / 강남 집값만 올린 윤석열 3년 / 여론조사 분석, 김문수 vs 한동훈 누가 이기나 | 2025.4.29",
-      "date": "2025-04-29T03:00:06-07:00",
-      "original_url": "https://youtu.be/hMzkFQKRpP0?si=U5Y2Yy54z_eS-fUg&t=2140"
+      "date": "2025-04-29",
+      "url": "https://youtu.be/hMzkFQKRpP0?si=U5Y2Yy54z_eS-fUg&t=2140"
     }
   ]
 }
